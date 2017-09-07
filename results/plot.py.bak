@@ -1,0 +1,98 @@
+
+# coding: utf-8
+
+# In[60]:
+
+import numpy as np
+import matplotlib.pyplot as plt
+import os.path
+
+# loc = './arowd2/'
+# loc = '/home/hsj/Dropbox/share(peilin-shuji)/IJCAI2015-AOS/figures/'
+loc = '/home/hsj/Dropbox/share(hoi-shuji)/IJCAI2015AOS/figures/'
+
+line_width = 2
+num_alg = 7
+marker_edge_width=[1,1,1,2.8,2.8,2.8,2.6,2.6,2.6]
+label_size = 20
+tick_size = 15
+legend_size = 18
+legend_font_size = 18
+marker_size = 10
+
+ord = [0,6,3,2,5,1,4]
+acc=[2,2,4,4,6,6,8,8]
+
+# all_que = [0,3*res_each_alg,6*res_each_alg]
+
+# Data
+colors = ['blue', 'red', 'green', 'blue', 'red', 'green','blue', 'red', 'magenta']
+labels = ['OASIS','FAOSL','FROSL', 'SOSL-d', 'SAOSL-d', 'SROSL-d', \
+				'AROMA-d','AROWC-Active','AROWC-Random']
+				# ,'AROWC-Passive', 'AROWC-Active', 'AROWC-Random',
+markers = ['^', 's', 'o', '^', 's', 'o','x', 's', 'o']
+filltypes = ['full','full','full','none','none','none','none','none','none']
+ls = ['--','--','--','-','-','-','-','-','-']
+x_labels=['Varied Query Ratio','Log of Varied Query Ratio','Varied Query Ratio','Log of Varied Query Ratio',\
+		'Varied Query Ratio','Log of Varied Query Ratio','Varied Query Ratio','Log of Varied Query Ratio']
+y_labels=['AP','AP','mAP','mAP','AP','AP','mAP','mAP']
+file_names=['_AP_Train','_AP_Train_Log','_mAP_Train','_AP_Train_Log',\
+			'_AP_Test','_AP_Test_Log','_mAP_Test','_mAP_Test_Log',]
+# datas=['caltech50']
+datas = [ 'satimage','segment', 'letter','pendigits']
+# 'caltech50']#,
+for data in datas:	
+
+	if data == 'satimage' or data == 'segment' or data == 'caltech50':
+		div = 1
+		res_each_alg = 12
+	else:
+		div = 2
+		res_each_alg = 6
+
+	labels=[]
+	if data == 'caltech50':
+		labels = ['OASIS','FAOSL','FROSL', 'SOSL-d', 'SAOSL-d', 'SROSL-d', \
+				'AROMA-d','AROWC-Active','AROWC-Random']
+	else:
+		labels = ['OASIS','FAOSL','FROSL', 'SOSL', 'SAOSL', 'SROSL', \
+				'AROMA','AROWC-Active','AROWC-Random']
+	all_que = [0,3*res_each_alg,6*res_each_alg]
+	datafile = loc+data
+	if os.path.isfile(datafile+'.txt') == False:
+		print data, 'does not exit'
+		continue
+	M = np.loadtxt(datafile+'.txt')				
+	n,d = M.shape
+	print data, n,d									
+	for i in all_que:		
+		for j in range(d):
+			M[i,j] = (j+1)*1.0/d				
+
+	for t in range(8):
+		fig = plt.figure()
+		ax = fig.add_subplot(1,1,1)			
+		for i in ord:			
+			plt.plot((M[i*res_each_alg,:]), M[i*res_each_alg+acc[t]/div,:], \
+				label = labels[i], ls=ls[i], color=colors[i], marker = markers[i],\
+				fillstyle=filltypes[i],markersize=marker_size,mew=marker_edge_width[i])
+			# plt.yticks(np.arange(min(M[i*res_each_alg,:]),max(M[i*res_each_alg,:])+1,0.5))
+			# plt.errorbar((M[i*res_each_alg,:]), M[i*res_each_alg+acc[t]/div,:],M[i*res_each_alg+acc[t]+1/div,:],\
+			# 	lw=line_width,label = labels[i], ls=ls[i], color=colors[i], marker = markers[i],\
+			# 	fillstyle=filltypes[i],markersize=marker_size,mew=marker_edge_width[i])
+		start, end = ax.get_ylim()
+		ax.yaxis.set_ticks(np.arange(0.0, end+0.1, 0.1))
+		ax.xaxis.set_ticks(np.arange(0, 1.2, 0.2))
+		plt.xlabel(x_labels[t],fontsize=label_size)
+		plt.ylabel(y_labels[t],fontsize=label_size)
+		ax.tick_params(axis='x', labelsize=tick_size)
+		ax.tick_params(axis='y', labelsize=tick_size)
+		# plt.gca().get_xaxis().get_major_formatter().set_useOffset(False)
+		if (t+1)%2 == 0:
+			ax.set_xscale('log')
+		plt.legend(loc=4, ncol=1, shadow=True, fancybox=True,prop={'size':legend_size},fontsize=legend_font_size)
+		plt.grid(True,which="both",ls="--", color='0.4')
+		plt.savefig(loc+data+file_names[t]+".pdf")
+		plt.close(fig)	
+
+	

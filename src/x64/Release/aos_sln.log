@@ -1,0 +1,140 @@
+﻿Build started 3/17/2016 1:40:00 PM.
+     1>Project "D:\Dropbox\projects\research\AOS\src\aos_sln.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Data.cpp Experiment.cpp Model.cpp ModelAROMA.cpp ModelAROMAD.cpp ModelCWS.cpp ModelCWSD.cpp ModelOASIS.cpp Parameter.cpp Result.cpp Start.cpp Vector.cpp
+         Data.cpp
+     1>Data.cpp(106): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>Data.cpp(143): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(657): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(775): note: see reference to function template instantiation 'void std::allocator<_Other>::construct<_Objty,double&>(_Objty *,double &)' being compiled
+                 with
+                 [
+                     _Other=std::_Tree_node<float,void *>,
+                     _Objty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(775): note: see reference to function template instantiation 'void std::allocator<_Other>::construct<_Objty,double&>(_Objty *,double &)' being compiled
+                 with
+                 [
+                     _Other=std::_Tree_node<float,void *>,
+                     _Objty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(920): note: see reference to function template instantiation 'void std::allocator_traits<_Alloc>::construct<_Ty,double&>(std::allocator<_Other> &,_Objty *,double &)' being compiled
+                 with
+                 [
+                     _Alloc=std::allocator<std::_Tree_node<float,void *>>,
+                     _Ty=float,
+                     _Other=std::_Tree_node<float,void *>,
+                     _Objty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(920): note: see reference to function template instantiation 'void std::allocator_traits<_Alloc>::construct<_Ty,double&>(std::allocator<_Other> &,_Objty *,double &)' being compiled
+                 with
+                 [
+                     _Alloc=std::allocator<std::_Tree_node<float,void *>>,
+                     _Ty=float,
+                     _Other=std::_Tree_node<float,void *>,
+                     _Objty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(896): note: see reference to function template instantiation 'void std::_Wrap_alloc<std::allocator<_Other>>::construct<_Ty,double&>(_Ty *,double &)' being compiled
+                 with
+                 [
+                     _Other=std::_Tree_node<float,void *>,
+                     _Ty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(896): note: see reference to function template instantiation 'void std::_Wrap_alloc<std::allocator<_Other>>::construct<_Ty,double&>(_Ty *,double &)' being compiled
+                 with
+                 [
+                     _Other=std::_Tree_node<float,void *>,
+                     _Ty=float
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(1111): note: see reference to function template instantiation 'std::_Tree_node<float,void *> *std::_Tree_comp_alloc<_Traits>::_Buynode<double&>(double &)' being compiled
+                 with
+                 [
+                     _Traits=std::_Tset_traits<float,std::less<float>,std::allocator<float>,false>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(1111): note: see reference to function template instantiation 'std::_Tree_node<float,void *> *std::_Tree_comp_alloc<_Traits>::_Buynode<double&>(double &)' being compiled
+                 with
+                 [
+                     _Traits=std::_Tset_traits<float,std::less<float>,std::allocator<float>,false>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\set(215): note: see reference to function template instantiation 'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<float>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::emplace<double&>(double &)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Pr=std::less<float>,
+                     _Alloc=std::allocator<float>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\set(215): note: see reference to function template instantiation 'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<float>>>,bool> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::emplace<double&>(double &)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Pr=std::less<float>,
+                     _Alloc=std::allocator<float>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\set(106): note: see reference to function template instantiation 'void std::set<float,std::less<_Kty>,std::allocator<_Kty>>::insert<_Iter>(_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Iter=double *
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\set(106): note: see reference to function template instantiation 'void std::set<float,std::less<_Kty>,std::allocator<_Kty>>::insert<_Iter>(_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Iter=double *
+                 ]
+         Data.cpp(142): note: see reference to function template instantiation 'std::set<float,std::less<_Kty>,std::allocator<_Kty>>::set<double*>(_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Iter=double *
+                 ]
+         Data.cpp(142): note: see reference to function template instantiation 'std::set<float,std::less<_Kty>,std::allocator<_Kty>>::set<double*>(_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Kty=float,
+                     _Iter=double *
+                 ]
+         Experiment.cpp
+     1>Experiment.cpp(195): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     1>Experiment.cpp(218): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+         Model.cpp
+         ModelAROMA.cpp
+     1>ModelAROMA.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+         ModelAROMAD.cpp
+     1>ModelAROMAD.cpp(36): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+         ModelCWS.cpp
+     1>ModelCWS.cpp(40): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+         ModelCWSD.cpp
+     1>ModelCWSD.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+         ModelOASIS.cpp
+     1>ModelOASIS.cpp(26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+         Parameter.cpp
+     1>Parameter.cpp(82): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     1>Parameter.cpp(84): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     1>Parameter.cpp(86): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     1>Parameter.cpp(88): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+         Result.cpp
+         Start.cpp
+         Vector.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Dropbox\projects\research\AOS\src\x64\Release\aos_sln.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Dropbox\projects\research\AOS\src\x64\Release\aos_sln.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Dropbox\projects\research\AOS\src\x64\Release\aos_sln.lib" /MACHINE:X64 x64\Release\Data.obj
+         x64\Release\Experiment.obj
+         x64\Release\Model.obj
+         x64\Release\ModelAROMA.obj
+         x64\Release\ModelAROMAD.obj
+         x64\Release\ModelCWS.obj
+         x64\Release\ModelCWSD.obj
+         x64\Release\ModelOASIS.obj
+         x64\Release\Parameter.obj
+         x64\Release\Result.obj
+         x64\Release\Start.obj
+         x64\Release\Vector.obj
+         Generating code
+         All 1016 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         Finished generating code
+         aos_sln.vcxproj -> D:\Dropbox\projects\research\AOS\src\x64\Release\aos_sln.exe
+     1>Done Building Project "D:\Dropbox\projects\research\AOS\src\aos_sln.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.74

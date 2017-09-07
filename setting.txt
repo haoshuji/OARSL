@@ -1,0 +1,25 @@
+top_k 10
+num_fold 5
+num_que 20
+i_query_start 0
+i_query_end 20
+num_ticks 10
+b_start_first -10
+b_start_second -20
+b_step_first 1.5
+b_step_second 1.5
+debug 1
+Par_Loop 0
+M_Ini 0
+Norm2One 1
+AvgM 0
+OASIS_C 0.1
+CWS_r 1
+CWS_eta 0.1
+AROMA_r 100
+find_OASIS_C 0
+find_CWS_eta 1
+find_CWS_r 1
+find_AROMA_r 1
+Full_Matrix 0
+
